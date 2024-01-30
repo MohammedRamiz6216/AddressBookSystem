@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,6 +10,13 @@ public class Main {
         System.out.println(a1.display(p1));
         Addressbook b1 = new Addressbook();
         b1.contactList.put(1,p1);
+        b1.addPerson(1,p1);
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter person's first name");
+        String deleteFname = scan.next();
+        System.out.println("Enter person's last name");
+        String deleteLname = scan.next();
+        b1.deletePerson(deleteFname, deleteLname);
         a1.UpdateContact(p1);
         System.out.println(b1.contactList);
         }
