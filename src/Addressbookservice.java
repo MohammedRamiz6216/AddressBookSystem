@@ -30,4 +30,37 @@ public class Addressbookservice {
 
 
     }
+    public void UpdateContact(Person p){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first name of the contact to be updated :");
+        String firstNameToUpdate = sc.next();
+        if(firstNameToUpdate.equals(p.getFirstName())){
+            System.out.println("Enter the new first name:");
+            String newFirstname = sc.next();
+            p.setFirstName(newFirstname);
+            System.out.println("Enter the new last name:");
+            String newLastname = sc.next();
+            p.setLastName(newLastname);
+            System.out.println("Enter new city");
+            String newCity = sc.next();
+            p.setCity(newCity);
+            System.out.println("Enter new state");
+            String newState = sc.next();
+            p.setState(newState);
+            System.out.println("Enter new email");
+            String newEmail = sc.next();
+            p.setEmail(newEmail);
+            System.out.println("Enter new phone number");
+            int newphNum = sc.nextInt();
+            p.setPhoneNumber(newphNum);
+            System.out.println("Enter new zip code");
+            int newZip = sc.nextInt();
+            p.setZip(newZip);
+            System.out.println("Contact updated succesfully");
+
+        }
+        else{
+            System.out.println("Contact not found");
+        }
+    }
 }

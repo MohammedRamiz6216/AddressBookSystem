@@ -8,6 +8,7 @@ public class Main {
         System.out.println(a1.display(p1));
         Addressbook b1 = new Addressbook();
         b1.contactList.put(1,p1);
+        a1.UpdateContact(p1);
         System.out.println(b1.contactList);
         }
 
