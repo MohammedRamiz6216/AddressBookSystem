@@ -48,7 +48,7 @@ public class Person {
     }
 
     public void setState(String state) {
-        State = state;
+        this.State = state;
     }
 
     public void setEmail(String email) {

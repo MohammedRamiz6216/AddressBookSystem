@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Addressbook {
+import java.util.HashMap;
+public class Addressbook {
+    HashMap<Integer,Person> contactList = new HashMap<>();
 }
