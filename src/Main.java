@@ -14,7 +14,6 @@ public class Main {
         Addressbook b1 = new Addressbook();
         b1.contactList.put(1,p1);
         b1.addPerson(1,p1);
-
         System.out.println("Enter person's first name");
         String deleteFname = scan.next();
         System.out.println("Enter person's last name");

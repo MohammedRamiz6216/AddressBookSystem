@@ -1,5 +1,7 @@
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 public class Addressbookservice {
     public String display(Person p){
         return p.getFirstName()+ " "+p.getLastName()+" "+p.getCity()+" "+p.getState()+" "+p.getEmail()+" "+p.getPhoneNumber()+" "+p.getZip();
@@ -19,13 +21,33 @@ public class Addressbookservice {
         String state =sc.next();
         p.setState(state);
         System.out.println("Enter your email");
-        String email =sc.next();
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        System.out.println("Enter your email");
+        String email = sc.next();
+        while (!Pattern.matches(emailRegex, email)) {
+            System.out.println("Invalid email format. Please enter a valid email");
+            email = sc.next();
+        }
         p.setEmail(email);
+
+        // Validate phone number using regex
+        String phoneNumberRegex = "^\\+?[0-9-]+$";
         System.out.println("Enter your phone number");
-        int phNo =sc.nextInt();
+        String phNo = sc.next();
+        while (!Pattern.matches(phoneNumberRegex, phNo)) {
+            System.out.println("Invalid phone number format. Please enter a valid phone number");
+            phNo = sc.next();
+        }
         p.setPhoneNumber(phNo);
+
+        // Validate zip code using regex
+        String zipCodeRegex = "\\d{5}";
         System.out.println("Enter your zip code");
-        int zip =sc.nextInt();
+        String zip = sc.next();
+        while (!Pattern.matches(zipCodeRegex, zip)) {
+            System.out.println("Invalid zip code format. Please enter a valid zip code");
+            zip = sc.next();
+        }
         p.setZip(zip);
 
 
@@ -51,10 +73,10 @@ public class Addressbookservice {
             String newEmail = sc.next();
             p.setEmail(newEmail);
             System.out.println("Enter new phone number");
-            int newphNum = sc.nextInt();
+            String newphNum = sc.next();
             p.setPhoneNumber(newphNum);
             System.out.println("Enter new zip code");
-            int newZip = sc.nextInt();
+            String newZip = sc.next();
             p.setZip(newZip);
             System.out.println("Contact updated succesfully");
 
